@@ -1,33 +1,111 @@
-# React + TypeScript + Vite
+# Candidate Search Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+The **Candidate Search Application** is a web application that allows employers to search for candidates using the GitHub API, evaluate their profiles, and save potential candidates for hiring. The app provides functionality to browse candidates, save profiles to a potential candidates list, and persist this data using `localStorage`.
 
-* [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md), which uses [Babel](https://babeljs.io/) for Fast Refresh
-* [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc), which uses [SWC](https://swc.rs/) for Fast Refresh
+## Deployed Application
 
-## Expanding the ESLint configuration
+[Linked Here](https://candidatesearch1-hmgo.onrender.com/)
 
-If you're developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Features
+- Fetch candidate data from the GitHub API.
+- Display candidate profiles with details including name, username, location, avatar, email, company, and bio.
+- Save or reject candidates.
+- View a list of saved candidates with their information.
+- Persistent storage of saved candidates using `localStorage`.
+- Clean and polished user interface.
 
-* Configure the top-level `parserOptions` property as follows:
+## Technologies Used
+- **React** with **TypeScript**
+- **Vite** for building and bundling
+- **GitHub REST API**
+- **LocalStorage** for data persistence
+- **Render** for deployment
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Installation
 
-* Replace `plugin:@typescript-eslint/recommended` with `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`.
-* Optionally, add `plugin:@typescript-eslint/stylistic-type-checked`.
-* Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` and `plugin:react/jsx-runtime` to the `extends` list.
+### Prerequisites
+- Node.js installed
+- A GitHub personal access token for API authentication
 
----
-© 2024 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+### Steps
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd <repository-name>
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Set up the environment variables:
+   - Create a `.env` file in the root directory.
+   - Add your GitHub personal access token:
+     ```env
+     VITE_GITHUB_TOKEN=your_personal_access_token
+     ```
+
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+5. Build the project:
+   ```bash
+   npm run build
+   ```
+
+## Usage
+
+### Candidate Search Page
+- Displays a candidate's information fetched from the GitHub API.
+- Use the `+` button to save a candidate to the potential candidates list.
+- Use the `-` button to reject a candidate and move to the next.
+
+### Potential Candidates Page
+- Lists all saved candidates.
+- Displays the saved candidate's information.
+- Allows the removal of saved candidates.
+
+## Deployment
+The application is deployed using [Render](https://render.com). To deploy:
+1. Run the build command:
+   ```bash
+   npm run build
+   ```
+2. Set the **Publish Directory** to the output folder.
+3. Configure environment variables in Render for the GitHub token.
+
+## Contributing
+1. Fork the repository.
+2. Create a new branch for your feature:
+   ```bash
+   git checkout -b feature-name
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m "Add feature-name"
+   ```
+4. Push to your branch:
+   ```bash
+   git push origin feature-name
+   ```
+5. Create a pull request.
+
+## Screenshots
+
+### Candidate Search Page
+![Candidate Search](./Screen%20Shot%202025-01-14%20at%205.48.46%20PM.png)
+
+### Potential Candidates Page
+![Potential Candidates](/Screen%20Shot%202025-01-14%20at%205.48.55%20PM.png)
+
+## License
+This project is licensed under the [MIT License](./LICENSE).
+
+## Acknowledgments
+- [GitHub REST API Documentation](https://docs.github.com/en/rest)
+- [Render Deployment Guide](https://render.com/docs/deploy-a-react-app)
